@@ -1,4 +1,5 @@
 <?php
+    include_once __DIR__ . '/user.php';
 
     class Product {
         public $name;
@@ -16,7 +17,7 @@
 
         public function addProduct(){
             $product = new Product($_name, $_type, $_price);
-            if($creditCard){
+            if($this->creditCardExpired){
                 $this->products[] = $product;
                 return $product;
             } else{
@@ -24,6 +25,11 @@
             }
         }
 
+        public function getDiscount(){
+            {
+                return $this->price - ($this->price * setDiscount()  / 100);
+            }
+        }
         
 
 
