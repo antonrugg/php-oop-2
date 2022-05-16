@@ -15,15 +15,6 @@
     }
 
 
-        public function addProduct(){
-            $product = new Product($_name, $_type, $_price, $_signed);
-            if($this->creditCardExpired){
-                $this->products[] = $product;
-                return $product;
-            } else{
-                throw new Exception('Your credit card is expired or your date of expiration is wrong. Try again.');
-            }
-        }
 
         public function getDiscount(){
             {

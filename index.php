@@ -37,6 +37,15 @@
         var_dump($game->getDiscount());
     echo('</pre>');
 
+    echo('<pre>');
+        var_dump($unsignedUser->addProduct('croccantini','cibo',20.00, true));
+    echo('</pre>');
+
+    
+    
+
+
+
     
 
 
