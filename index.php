@@ -2,9 +2,9 @@
     include_once __DIR__ . '/entities/product.php';
     include_once __DIR__ . '/entities/user.php';
 
-     $food = new FoodProduct('Super Dog Name', 'Food Type', 9.99);
-     $game = new Product('Super Dog Game', 'Game Type', 12.99);
-     $dogBed = new Product('Super Dog Bed', 'Bed Type', 39.99);
+     $food = new FoodProduct('Super Dog Name', 'Food Type', 9.99, true);
+     $game = new GameProduct('Super Dog Game', 'Game Type', 12.99, true);
+     $dogBed = new DogBedProduct('Super Dog Bed', 'Bed Type', 39.99, true);
      $unsignedUser = new User();
      $signedUser = new SignedUser();
 
@@ -27,11 +27,17 @@
         var_dump($signedUser);
     echo('</pre>');
 
-    $food->getDiscount();
+    // $food->getDiscount();
 
     echo('<pre>');
-        var_dump($food);
+        var_dump($food->getDiscount());
     echo('</pre>');
+
+    echo('<pre>');
+        var_dump($game->getDiscount());
+    echo('</pre>');
+
+    
 
 
     // echo('<pre>');

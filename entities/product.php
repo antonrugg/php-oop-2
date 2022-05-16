@@ -8,7 +8,7 @@
         public $price;
         public $products = [];
 
-        function __construct($_name, $_type, $_price){
+        function __construct($_name, $_type, $_price, $_signed){
         $this->name = $_name;
         $this->type = $_type;
         $this->price = $_price;
@@ -16,7 +16,7 @@
 
 
         public function addProduct(){
-            $product = new Product($_name, $_type, $_price);
+            $product = new Product($_name, $_type, $_price, $_signed);
             if($this->creditCardExpired){
                 $this->products[] = $product;
                 return $product;
@@ -27,7 +27,10 @@
 
         public function getDiscount(){
             {
-                return $this->price - ($this->price * setDiscount()  / 100);
+                if($signed = true){
+                    $discount = 20;
+                    return $this->price - ($this->price * $discount  / 100);
+                }
             }
         }
         
