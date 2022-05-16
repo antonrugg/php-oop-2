@@ -16,13 +16,15 @@
 
         public function addProduct(){
             $product = new Product($_name, $_type, $_price);
-            if($creditCardExpired){
+            if($creditCard){
                 $this->products[] = $product;
                 return $product;
             } else{
                 throw new Exception('Your credit card is expired or your date of expiration is wrong. Try again.');
             }
         }
+
+        
 
 
     }
