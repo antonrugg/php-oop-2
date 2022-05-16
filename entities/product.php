@@ -18,11 +18,26 @@
             $product = new Product($_name, $_type, $_price);
             if($creditCardExpired){
                 $this->products[] = $product;
+                return $product;
             } else{
-                throw new Exception('Your credit card is expired or your date of expiration is wrong.');
+                throw new Exception('Your credit card is expired or your date of expiration is wrong. Try again.');
             }
-           
         }
+
+
+    }
+
+    class FoodProduct extends Product {
+        public $size;
+    }
+
+    class GameProduct extends Product {
+        public $color;
+    }
+
+    class DogBedProduct extends Product {
+        public $size;
+        public $fabric;
     }
 
 
