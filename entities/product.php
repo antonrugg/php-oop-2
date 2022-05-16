@@ -5,6 +5,24 @@
         public $type;
         public $quantity;
         public $price;
+        public $products = [];
+
+        function __construct($_name, $_type, $_price){
+        $this->name = $_name;
+        $this->type = $_type;
+        $this->price = $_price;
+    }
+
+
+        public function addProduct(){
+            $product = new Product($_name, $_type, $_price);
+            if($creditCardExpired){
+                $this->products[] = $product;
+            } else{
+                throw new Exception('Your credit card is expired or your date of expiration is wrong.');
+            }
+           
+        }
     }
 
 

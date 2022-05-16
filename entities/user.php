@@ -3,7 +3,7 @@
         public $username;
         public $email;
         public $address;
-        public $creditCard;
+        public $creditCardExpired;
         protected $discount = 0;
 
     }
